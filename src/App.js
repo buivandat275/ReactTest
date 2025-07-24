@@ -1,22 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './components/MyComponent';
 
 function App() {
+
+  const name = "Dat";
+  const age = 18;
+  const isfemale = true;
+  const student = {
+    name: 'easy frontend'
+  };
+  const colorList = ['red', 'green', 'blue']
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          BuiVanDat
+          <MyComponent />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p> xin chao {name} - {age}</p>
+
+        {isfemale ? <p>Male</p> : <p>Femal</p>}
+
+        <ul>
+          {colorList.map(color => (
+            <li style={{ color }}>{color}</li>
+          ))}
+        </ul>
+
       </header>
     </div>
   );
